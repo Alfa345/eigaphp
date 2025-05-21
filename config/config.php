@@ -4,6 +4,21 @@
 // Inclure les fonctions globales (si generate_simulated_ad_slot_content est ici)
 require_once __DIR__ . '/includes/function.php'; // Assurez-vous que ce fichier existe et contient la fonction
 
+// Dans config.php (SI VOUS UTILISEZ Google reCAPTCHA)
+define('6LdUwkMrAAAAALdfb_MYp27XCtKyVpdReqTQ86gK', '6LdUwkMrAAAAAO3kMtU1Aioiu03pWsT9Od7GHPxZ');
+
+
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
+// Définir ROOT_PATH pour une utilisation globale dans l'application (facultatif mais utile)
+// Ce chemin pointe vers la racine de votre projet 'eigaphp' sur le serveur.
+define('ROOT_PATH', dirname(__DIR__));
+
+// Inclure le fichier de configuration principal
+require_once ROOT_PATH . '/config/config.php'; // Devrait maintenant fonctionner
+
 // ─────────────────────────────────────────────────────────────────────────────
 // 0) Site Information
 // ─────────────────────────────────────────────────────────────────────────────
