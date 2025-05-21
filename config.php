@@ -26,11 +26,12 @@ if (session_status() === PHP_SESSION_NONE) {
 // ─────────────────────────────────────────────────────────────────────────────
 // 3) Database settings
 // ─────────────────────────────────────────────────────────────────────────────
-define('DB_HOST', 'localhost');
-define('DB_PORT', 3306);
-define('DB_NAME', 'eiganights');
-define('DB_USER', 'root');
-define('DB_PASS', 'root');
+// In config.php
+define('DB_HOST', getenv('MYSQL_HOST') ?: 'localhost');
+define('DB_NAME', getenv('MYSQL_DATABASE') ?: 'eiganights');
+define('DB_USER', getenv('MYSQL_USER') ?: 'root');
+define('DB_PASS', getenv('MYSQL_PASSWORD') ?: 'root');
+// You might need to remove DB_PORT if Herogu's MYSQL_HOST includes it or if it's standard port.
 
 $mysqli = new mysqli(DB_HOST, DB_USER, DB_PASS, DB_NAME, DB_PORT);
 $conn = $mysqli;
