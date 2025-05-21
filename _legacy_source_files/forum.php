@@ -3,7 +3,7 @@
  * forum.php
  * Displays a list of forum threads.
  */
-include_once 'config.php'; // Includes session_start(), $conn, TMDB_API_KEY, BASE_URL
+require_once __DIR__ . '/../config/config.php'; // Includes session_start(), $conn, TMDB_API_KEY, BASE_URL
 // Assumes functions.php (with CSRF functions) is included via config.php or directly
 
 $pageTitle = "Forum des discussions - Eiganights";
@@ -47,7 +47,7 @@ if (!function_exists('generate_csrf_token')) {
 }
 
 
-include_once 'includes/header.php';
+include_once ROOT_PATH . '/includes/header.php';
 ?>
 
 <main class="container forum-page">
@@ -160,4 +160,6 @@ include_once 'includes/header.php';
     <?php endif; ?>
 </main>
 
-<?php include_once 'includes/footer.php'; ?>
+<?php 
+include_once ROOT_PATH . '/includes/footer.php';
+?>

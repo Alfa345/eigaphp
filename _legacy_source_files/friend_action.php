@@ -3,7 +3,7 @@
  * friend_action.php
  * Handles all friendship-related actions: send, cancel, accept, decline, unfriend.
  */
-include_once 'config.php'; // Includes session_start(), db connection ($conn)
+require_once __DIR__ . '/../config/config.php';  // Includes session_start(), db connection ($conn)
 
 // Error reporting: should be set in config.php
 // For development, ensure errors are displayed. For production, they should be logged.

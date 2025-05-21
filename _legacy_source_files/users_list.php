@@ -3,7 +3,7 @@
  * users_list.php
  * Displays a list of users and allows searching for users.
  */
-include_once 'config.php'; // Includes session_start(), $conn, TMDB_API_KEY
+require_once __DIR__ . '/../config/config.php'; // Includes session_start(), $conn, TMDB_API_KEY
 
 $loggedInUserId = $_SESSION['user_id'] ?? null; // Null if user is not logged in
 $users = [];
@@ -84,7 +84,7 @@ if (isset($stmt) && $stmt) { // Check if $stmt is not false (i.e., prepare was s
 }
 // If $stmt prepare failed, an error message should already be in $_SESSION['error']
 
-include_once 'includes/header.php';
+include_once ROOT_PATH . '/includes/header.php';
 ?>
 
 <main class="container users-list-page">
@@ -141,5 +141,5 @@ include_once 'includes/header.php';
 
 <?php
 // $conn->close(); // Optional
-include_once 'includes/footer.php';
+include_once ROOT_PATH . '/includes/footer.php';
 ?>

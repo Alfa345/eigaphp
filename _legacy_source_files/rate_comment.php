@@ -3,7 +3,7 @@
  * rate_comment.php
  * Handles saving/updating user ratings and comments for movies.
  */
-include_once 'config.php'; // Includes session_start(), $conn
+require_once __DIR__ . '/../config/config.php';  // Includes session_start(), $conn
 
 // Check if user is logged in
 if (!isset($_SESSION['user_id'])) {

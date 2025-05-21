@@ -3,7 +3,7 @@
  * profile.php
  * Displays and manages the logged-in user's profile.
  */
-include_once 'config.php'; // Handles session_start(), $conn, TMDB_API_KEY
+require_once __DIR__ . '/../config/config.php';  // Handles session_start(), $conn, TMDB_API_KEY
 
 // Check if user is logged in; if not, redirect to login page
 if (!isset($_SESSION['user_id'])) {
@@ -238,7 +238,7 @@ if (!$stmtMyAnnotations) {
     $stmtMyAnnotations->close();
 }
 
-include_once 'includes/header.php';
+include_once ROOT_PATH . '/includes/header.php';
 ?>
 
 <main class="container profile-page">
@@ -417,5 +417,5 @@ include_once 'includes/header.php';
 
 <?php
 // $conn->close(); // Optional.
-include_once 'includes/footer.php';
+include_once ROOT_PATH . '/includes/footer.php';
 ?>

@@ -3,7 +3,7 @@
  * register.php
  * Handles new user registration.
  */
-include_once 'config.php'; // Includes session_start(), $conn
+require_once __DIR__ . '/../config/config.php'; // Includes session_start(), $conn
 
 // If user is already logged in, redirect them to their profile page
 if (isset($_SESSION['user_id'])) {
@@ -120,7 +120,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-include_once 'includes/header.php';
+include_once ROOT_PATH . '/includes/header.php';
 ?>
 
 <main class="container auth-form-container">
@@ -169,5 +169,5 @@ include_once 'includes/header.php';
 
 <?php
 // $conn->close(); // Optional
-include_once 'includes/footer.php';
+include_once ROOT_PATH . '/includes/footer.php';
 ?>

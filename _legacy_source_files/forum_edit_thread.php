@@ -3,7 +3,7 @@
  * forum_edit_thread.php
  * Handles editing an existing forum thread by its author or an admin.
  */
-include_once 'config.php'; // Includes session_start(), $conn, TMDB_API_KEY, BASE_URL
+require_once __DIR__ . '/../config/config.php';  // Includes session_start(), $conn, TMDB_API_KEY, BASE_URL
 
 // Check if user is logged in
 if (!isset($_SESSION['user_id'])) {
@@ -169,7 +169,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 }
 
 
-include_once 'includes/header.php';
+include_once 'includes/footer.php';
 ?>
 <main class="container edit-thread-page">
     <h1>Modifier la Discussion</h1>
@@ -223,4 +223,6 @@ include_once 'includes/header.php';
     </form>
 </main>
 
-<?php include_once 'includes/footer.php'; ?>
+<?php 
+include_once ROOT_PATH . '/includes/footer.php';
+?>

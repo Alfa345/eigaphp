@@ -3,7 +3,7 @@
  * contact.php
  * Handles user contact submissions.
  */
-include_once 'config.php'; // Includes session_start(), $conn
+require_once __DIR__ . '/../config/config.php'; 
 
 $pageTitle = "Contactez-nous - Eiganights";
 $message_sent = false;
@@ -46,7 +46,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     }
 }
 
-include_once 'includes/header.php';
+include_once ROOT_PATH . '/includes/header.php';
 ?>
 
 <main class="container auth-form-container"> <?php // Re-using auth form style for simplicity ?>
@@ -89,5 +89,5 @@ include_once 'includes/header.php';
 </main>
 
 <?php
-include_once 'includes/footer.php';
+include_once ROOT_PATH . '/includes/footer.php';
 ?>

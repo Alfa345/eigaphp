@@ -5,7 +5,7 @@
  * Gère la récupération des données depuis TMDB et la base de données locale.
  * Inclut des fonctionnalités de monétisation simulées pour un projet scolaire.
  */
-require_once 'config.php'; // Contient les constantes, la connexion DB, et inclut functions.php
+require_once __DIR__ . '/../config/config.php'; // Contient les constantes, la connexion DB, et inclut functions.php
 
 // -----------------------------------------------------------------------------
 // 1. INITIALISATION & VALIDATION DES PARAMÈTRES
@@ -176,7 +176,7 @@ $cast = !empty($movieCreditsAPI['cast']) ? array_slice($movieCreditsAPI['cast'],
 // -----------------------------------------------------------------------------
 // DÉBUT DE L'AFFICHAGE HTML
 // -----------------------------------------------------------------------------
-include_once 'includes/header.php';
+include_once ROOT_PATH . '/includes/header.php';
 ?>
 
 <main class="container movie-detail-page" role="main">
@@ -445,5 +445,5 @@ include_once 'includes/header.php';
 </main>
 
 <?php
-include_once 'includes/footer.php';
+include_once ROOT_PATH . '/includes/footer.php';
 ?>

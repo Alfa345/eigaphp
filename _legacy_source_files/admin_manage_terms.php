@@ -3,7 +3,7 @@
  * admin_manage_terms.php
  * Gère l'édition du contenu des Conditions Générales d'Utilisation stockées dans un fichier.
  */
-require_once 'config.php'; // Pour session, droits admin, BASE_URL
+require_once __DIR__ . '/../config/config.php'; // Pour session, droits admin, BASE_URL
 
 // --- Contrôle d'accès Admin ---
 if (!isset($_SESSION['user_id']) || !isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {

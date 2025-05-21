@@ -3,7 +3,7 @@
  * forum_view_thread.php
  * Displays a single forum thread and its posts, allows replies, and thread actions (edit/delete) for authorized users.
  */
-include_once 'config.php'; // Includes session_start(), $conn, TMDB_API_KEY, BASE_URL
+require_once __DIR__ . '/../config/config.php';  // Includes session_start(), $conn, TMDB_API_KEY, BASE_URL
 // Assumes functions.php (with CSRF functions) is included via config.php or directly
 
 // Validate thread ID from GET parameter
@@ -133,7 +133,7 @@ if (!function_exists('generate_csrf_token')) {
     error_log("CSRF function generate_csrf_token() not found in forum_view_thread.php context.");
 }
 
-include_once 'includes/header.php';
+include_once 'includes/footer.php';
 ?>
 <main class="container view-thread-page">
     <nav aria-label="breadcrumb" class="forum-breadcrumb">
@@ -257,4 +257,6 @@ include_once 'includes/header.php';
     <?php endif; ?>
 
 </main>
-<?php include_once 'includes/footer.php'; ?>
+<?php 
+include_once ROOT_PATH . '/includes/footer.php';
+ ?>

@@ -3,7 +3,7 @@
  * forum_delete_thread.php
  * Handles the deletion of a forum thread by its author or an admin.
  */
-include_once 'config.php'; // Includes session_start(), db connection ($conn)
+require_once __DIR__ . '/../config/config.php'; 
 
 // Check if user is logged in
 if (!isset($_SESSION['user_id'])) {

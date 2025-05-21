@@ -4,8 +4,8 @@
  * Homepage: Displays various sections of movies inspired by Letterboxd.
  */
 // Correct path to config.php from the _legacy_source_files directory
-require_once __DIR__ . '/../config/config.php'; // Utiliser require_once pour config.php // Utiliser require_once pour config.php
-
+// Utiliser require_once pour config.php // Utiliser require_once pour config.php
+require_once __DIR__ . '/../config/config.php'; 
 // --- Fonctions d'aide pour récupérer les données de TMDB ---
 // Idéalement, ces fonctions seraient dans includes/functions.php
 
@@ -115,7 +115,7 @@ if (isset($_GET['search'])) {
     }
 }
 
-include_once 'includes/header.php';
+include_once ROOT_PATH . '/includes/header.php';
 ?>
 
 <main class="container homepage-content">
@@ -158,5 +158,5 @@ include_once 'includes/header.php';
 </main>
 
 <?php
-include_once 'includes/footer.php';
+include_once ROOT_PATH . '/includes/footer.php';
 ?>

@@ -4,7 +4,7 @@
  * Affiche les Conditions Générales d'Utilisation.
  * Utilise le contenu d'un fichier si disponible, sinon affiche un exemple codé en dur.
  */
-require_once 'config.php';
+require_once __DIR__ . '/../config/config.php'; 
 
 $siteName = defined('SITE_NAME') ? SITE_NAME : "EigaNights";
 $pageTitle = "Conditions Générales d'Utilisation - " . $siteName;
@@ -86,7 +86,7 @@ if ($termsContent === null) {
 }
 
 
-include_once 'includes/header.php';
+include_once ROOT_PATH . '/includes/header.php';
 ?>
 
 <main class="container static-page terms-page">
@@ -106,5 +106,5 @@ include_once 'includes/header.php';
 </main>
 
 <?php
-include_once 'includes/footer.php';
+include_once ROOT_PATH . '/includes/footer.php';
 ?>

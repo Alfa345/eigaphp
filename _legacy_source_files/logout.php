@@ -7,7 +7,7 @@
 // It's good practice to include config for consistent session handling,
 // even if this script's primary goal is to destroy the session.
 // config.php now ensures session_start() is called.
-include_once 'config.php';
+require_once __DIR__ . '/../config/config.php'; 
 
 // Unset all session variables.
 // This clears the data from the $_SESSION superglobal array.

@@ -3,8 +3,7 @@
  * admin_panel.php
  * Admin dashboard for user management.
  */
-include_once 'config.php'; // Includes session_start(), $conn
-
+require_once __DIR__ . '/../config/config.php'; 
 // --- Admin Access Control ---
 if (!isset($_SESSION['user_id']) || !isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {
     $_SESSION['error'] = "Accès non autorisé.";

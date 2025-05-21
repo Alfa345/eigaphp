@@ -3,7 +3,7 @@
  * admin_action.php
  * Handles actions performed by admins, like banning/unbanning users.
  */
-include_once 'config.php'; // Includes session_start(), db connection ($conn)
+require_once __DIR__ . '/../config/config.php'; // Includes session_start(), db connection ($conn)
 
 // --- Admin Access Control ---
 if (!isset($_SESSION['user_id']) || !isset($_SESSION['role']) || $_SESSION['role'] !== 'admin') {

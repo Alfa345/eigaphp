@@ -1,7 +1,7 @@
 <?php
 // api_tmdb_proxy.php
 
-include 'config.php'; // Doit définir TMDB_API_KEY
+require_once __DIR__ . '/../config/config.php'; // Doit définir TMDB_API_KEY
 
 header('Content-Type: application/json');
 

@@ -4,7 +4,7 @@
  * Displays the profile of a specified user.
  * (Version without 'blocked' status consideration)
  */
-include_once 'config.php'; 
+require_once __DIR__ . '/../config/config.php'; 
 
 $profileUser = null;
 $profileUserId = null; 
@@ -158,7 +158,7 @@ if ($canViewFullProfile) {
     // The if ($canViewFullProfile) block continues or ends after this.
 
 $pageTitle = "Profil de " . htmlspecialchars($profileUser['username'], ENT_QUOTES, 'UTF-8') . " - Eiganights";
-include_once 'includes/header.php';
+include_once ROOT_PATH . '/includes/header.php';
 ?>
 
 <main class="container view-profile-page">
@@ -320,5 +320,5 @@ include_once 'includes/header.php';
 </main>
 
 <?php
-include_once 'includes/footer.php';
+include_once ROOT_PATH . '/includes/footer.php';
 ?>

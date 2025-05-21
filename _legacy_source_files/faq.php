@@ -3,7 +3,7 @@
  * faq.php
  * Affiche les Questions Fréquemment Posées.
  */
-require_once 'config.php';
+require_once __DIR__ . '/../config/config.php'; 
 
 $pageTitle = "FAQ - " . (defined('SITE_NAME') ? SITE_NAME : "EigaNights");
 $faqs = [];
@@ -79,7 +79,7 @@ if (empty($faqs) && !$fetch_error) {
 }
 
 
-include_once 'includes/header.php';
+include_once ROOT_PATH . '/includes/header.php';
 ?>
 
 <main class="container static-page faq-page">
@@ -115,5 +115,5 @@ include_once 'includes/header.php';
 </main>
 
 <?php
-include_once 'includes/footer.php';
+include_once ROOT_PATH . '/includes/footer.php';
 ?>
