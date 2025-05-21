@@ -3,7 +3,8 @@
  * index.php
  * Homepage: Displays various sections of movies inspired by Letterboxd.
  */
-require_once 'config.php'; // Utiliser require_once pour config.php
+// Correct path to config.php from the _legacy_source_files directory
+require_once __DIR__ . '/../config/config.php'; // Utiliser require_once pour config.php // Utiliser require_once pour config.php
 
 // --- Fonctions d'aide pour récupérer les données de TMDB ---
 // Idéalement, ces fonctions seraient dans includes/functions.php
