@@ -1,5 +1,11 @@
 <?php
+// TEST MODIFICATION POUR GIT STATUS - <?php echo date('Y-m-d H:i:s'); ?>
+
 /*
+ * index.php
+ * Homepage: Displays various sections of movies inspired by Letterboxd.
+ */
+// require_once 'config.php'; // J'ai déplacé l'original pour l'instant
  * index.php
  * Homepage: Displays various sections of movies inspired by Letterboxd.
  */
