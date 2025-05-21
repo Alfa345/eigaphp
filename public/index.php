@@ -4,6 +4,50 @@
  * Homepage: Displays various sections of movies inspired by Letterboxd.
  */
 require_once 'config.php'; // Utiliser require_once pour config.php
+// ... après les ini_set ...
+
+echo "Current Directory (getcwd()): " . getcwd() . "<br>";
+echo "SCRIPT_FILENAME: " . $_SERVER['SCRIPT_FILENAME'] . "<br>";
+echo "__DIR__: " . __DIR__ . "<br>";
+
+$rootPathCalculated = dirname(__DIR__);
+echo "Calculated ROOT_PATH: " . $rootPathCalculated . "<br>";
+
+$configFileExpectedPath = $rootPathCalculated . '/config/config.php';
+echo "PHP is trying to include: " . $configFileExpectedPath . "<br>";
+
+if (file_exists($configFileExpectedPath)) {
+    echo "SUCCESS: Config file FOUND at " . $configFileExpectedPath . "<br>";
+} else {
+    echo "ERROR: Config file NOT FOUND at " . $configFileExpectedPath . "<br>";
+    echo "Checking one level up for config directory in case ROOT_PATH is public itself...<br>";
+    $altConfigFileExpectedPath = dirname(dirname(__DIR__)) . '/config/config.php'; // Si ROOT_PATH = public
+    echo "Alternative check path: " . $altConfigFileExpectedPath . "<br>";
+    if (file_exists($altConfigFileExpectedPath)) {
+         echo "SUCCESS: Config file FOUND at " . $altConfigFileExpectedPath . "<br>";
+    } else {
+         echo "ERROR: Config file NOT FOUND at " . $altConfigFileExpectedPath . " either.<br>";
+    }
+    // Essayons de lister le contenu de ROOT_PATH
+    echo "<pre>Contents of ROOT_PATH (" . htmlspecialchars($rootPathCalculated) . "):\n";
+    print_r(scandir($rootPathCalculated));
+    echo "</pre>";
+    // Essayons de lister le contenu de PUBLIC_PATH
+     $publicPathCalculated = __DIR__;
+    echo "<pre>Contents of PUBLIC_PATH (" . htmlspecialchars($publicPathCalculated) . "):\n";
+    print_r(scandir($publicPathCalculated));
+    echo "</pre>";
+    // Essayons de lister le contenu de un niveau AU-DESSUS de ROOT_PATH
+    $oneLevelUpFromRoot = dirname($rootPathCalculated);
+     echo "<pre>Contents of one level up from ROOT_PATH (" . htmlspecialchars($oneLevelUpFromRoot) . "):\n";
+    print_r(scandir($oneLevelUpFromRoot));
+    echo "</pre>";
+
+
+    exit; // Arrêter ici pour ne pas avoir l'erreur fatale pendant le débogage
+}
+
+// ... la suite de votre code, y compris la ligne avec require_once ...
 
 // --- Fonctions d'aide pour récupérer les données de TMDB ---
 // Idéalement, ces fonctions seraient dans includes/functions.php
